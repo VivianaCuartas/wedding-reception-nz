@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>We're getting married · Invitation</title>
+
+  <!-- Tipografías: Cormorant Garamond (serif editorial) + Parisienne (caligrafía) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Parisienne&family=Italiana&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/css/welcome.css" />
+
+  <!-- Open Graph para previsualización -->
+<meta property="og:title" content="Viviana & David 💍" />
+<meta property="og:description" content="We're getting married and we would love you to be part of our special day" />
+<meta property="og:image" content="https://nuestraboda07.netlify.app/og-preview.jpg" />
+<meta property="og:url" content="https://nuestraboda07.netlify.app" />
+<meta property="og:type" content="website" />
+
+<link rel="icon" href="img/favicon.png">
+</head>
+<body>
+
+  <!-- ============================================================
+       PANTALLA DE BIENVENIDA · INVITACIÓN
+       ============================================================ -->
+  <main class="welcome" id="welcome">
+
+    <!-- Capa de textura / grano (da sensación de papel, no de pantalla) -->
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <!-- Fondo botánico decorativo (esquinas con hojas de eucalipto) -->
+    <!-- =============================================================
+         REEMPLAZAR con tus imágenes de Canva si las prefieres:
+         - assets/images/botanical-top-left.png   (PNG transparente)
+         - assets/images/botanical-top-right.png  (PNG transparente)
+         - assets/images/botanical-bottom-left.png
+         - assets/images/botanical-bottom-right.png
+         Mientras tanto se usan SVG inline para que funcione sin assets.
+         ============================================================= -->
+
+
+    <!-- Tarjeta vertical tipo invitación -->
+    <article class="card" id="card">
+
+      <!-- Frase superior en caligrafía -->
+      <header class="card__header">
+      <!--   <p class="card__overline">— Nos casamos —</p> -->
+        <h1 class="card__title" id="welcomeQuote">
+          We made a promise<br/>and today we share it with you…
+        </h1>
+        <p class="card__subtitle">Click the seal to open the invitation</p>
+      </header>
+
+      <!-- ===========================================================
+           SOBRE EN CAPAS (no una sola imagen)
+           =========================================================== -->
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open invitation">
+
+        <!-- Sombra proyectada del sobre (para profundidad) -->
+        <div class="envelope__shadow" aria-hidden="true"></div>
+
+        <!-- Base del sobre (cuerpo rectangular) -->
+        <!-- ============================================================
+             REEMPLAZAR (opcional) con imagen de Canva:
+             assets/images/envelope-base.png
+             Formato: PNG transparente, 900x600px aprox, textura papel kraft
+             ============================================================ -->
+        <div class="envelope__base" aria-hidden="true">
+          <div class="envelope__paper-texture"></div>
+          <!-- Líneas decorativas interiores (efecto sobre real) -->
+          <div class="envelope__seam envelope__seam--left"></div>
+          <div class="envelope__seam envelope__seam--right"></div>
+          <div class="envelope__seam envelope__seam--bottom"></div>
+        </div>
+
+        <!-- Carta que sale del sobre (oculta al inicio) -->
+        <!-- ============================================================
+             REEMPLAZAR (opcional) con imagen de Canva:
+             assets/images/letter.png
+             Formato: PNG, proporción 3:4, con tus nombres y fecha
+             ============================================================ -->
+        <div class="envelope__letter" id="letter" aria-hidden="true">
+          <div class="letter__inner">
+            <p class="letter__ornament">❤</p>
+            <p class="letter__names">
+              <span>Viviana</span>
+              <span class="letter__amp">&</span>
+              <span>David</span>
+            </p>
+            <p class="letter__date">30 · January · 2027</p>
+            <p class="letter__ornament letter__ornament--sm">· · ·</p>
+            <p class="letter__cta">Opening invitation...</p>
+          </div>
+        </div>
+
+        <!-- Tapa del sobre (triangular) - capa superior -->
+        <!-- ============================================================
+             REEMPLAZAR (opcional) con imagen de Canva:
+             assets/images/envelope-flap.png
+             Formato: PNG transparente, forma triangular, mismo papel kraft
+             ============================================================ -->
+        <div class="envelope__flap" id="flap" aria-hidden="true">
+          <div class="envelope__paper-texture"></div>
+        </div>
+
+        <!-- Sello de lacre (capa clickeable) -->
+        <!-- ============================================================
+             REEMPLAZAR (opcional) con imagen de Canva:
+             assets/images/wax-seal.png
+             Formato: PNG transparente, circular, 200x200px, verde oscuro
+             con iniciales o monograma en relieve.
+             ============================================================ -->
+        <button class="wax-seal" id="waxSeal" aria-label="Open the invitation">
+          <img src="./img/wax-seal.png" alt="Wax seal" class="wax-seal__img">
+          <span class="wax-seal__pulse" aria-hidden="true"></span>
+        </button>
+
+      </div>
+
+      <!-- Pista visual: flecha/indicador que se oculta al hacer click -->
+     <!--  <p class="card__hint" id="cardHint">↑ Clic en el sello</p> -->
+
+    </article>
+
+  </main>
+
+  <!-- ============================================================
+       GSAP (animación principal)
+       CDN oficial · v3.12.5
+       ============================================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+
+  <!-- Script de la experiencia -->
+  <script src="/js/welcome.js" defer></script>
+
+</body>
+</html>
